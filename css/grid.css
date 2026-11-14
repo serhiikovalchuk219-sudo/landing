@@ -1,0 +1,12 @@
+/* ПР15. Спільні колонки для карток занять, фактів і медіа. */
+.class-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr)); gap: 1.25rem; }
+.session-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr)); gap: 0.8rem; }
+.media-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+.contact-layout { display: grid; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 48rem) {
+  .media-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+  .contact-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+}
+
+@media (min-width: 64rem) { .class-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media print { .site-header nav, .button, #contact-form, audio, video, .project-link { display: none; } body { background: #fff; color: #000; } .class-card, .audio-card, .video-figure { box-shadow: none; break-inside: avoid; } .table-wrap { overflow: visible; } h2 { break-after: avoid; } }
